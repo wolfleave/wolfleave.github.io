@@ -1,5 +1,5 @@
 # Site Settings
-title: Jekflix | A theme for Jekyll
+title: 离开
 email: youremail@xyz.com
 description: Some text about your blog.
 baseurl: "" # the subpath of your site, e.g. /blog
@@ -7,7 +7,7 @@ url: "https://wolfleave.github.io" # the base hostname & protocol for your site
 google_analytics: "UA-XXXXXXXX-X"
 
 # User Settings
-username: wolfleave
+username: 离开
 user_description: Some text about you.
 disqus_username: disqus_username
 
@@ -41,3 +41,12 @@ links:
 
 # Exclude my node related stuff
 exclude: ['package.json', 'src', 'node_modules']
+
+# Content Template
+defaults:
+  - scope:
+      path: "_posts"
+      type: "posts"
+    values:
+      layout: "post"
+      author: "李幸斌"
