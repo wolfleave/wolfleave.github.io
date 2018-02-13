@@ -2,12 +2,12 @@
 title: Jekflix | A theme for Jekyll
 email: youremail@xyz.com
 description: Some text about your blog.
-baseurl: "/jekflix-template" # the subpath of your site, e.g. /blog
-url: "https://www.rossener.com" # the base hostname & protocol for your site
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://wolfleave.github.io" # the base hostname & protocol for your site
 google_analytics: "UA-XXXXXXXX-X"
 
 # User Settings
-username: Jekflix
+username: wolfleave
 user_description: Some text about you.
 disqus_username: disqus_username
 
@@ -26,7 +26,7 @@ highlighter: rouge
 permalink: /:title/
 
 # Plugins
-gems:
+plugins:
   - jemoji
 
 # Links to include in menu navigation
