@@ -1,5 +1,5 @@
 <footer>
-    <p>
+    {% comment %} <p>
       {% if site.github_username %}
       <a itemprop="github" href="https://github.com/{{ site.github_username }}" title="Github">
         <svg><use xlink:href="#icon-github"></use></svg>
@@ -8,8 +8,8 @@
     </p>
     <ul>
         <li><a class="feed" href="{{ site.url }}{{site.baseurl}}/feed.xml" title="Atom/RSS feed">Feed</a></li>
-    </ul>
-    <p><span>Jekflix</span> was made with <svg class="love"><use xlink:href="#icon-heart"></use></svg> by <a href="http://www.rossener.com" target="_blank" class="creator">Thiago Rossener</a></p>
+    </ul> {% endcomment %}
+    <p>© 2014-2018 wolfleave, All rights reserved. Powered by: <a href="http://jekyllcn.com/" target="_blank" class="creator">Jekyll</a> Theme by: <a href="http://www.rossener.com" target="_blank" class="creator">Thiago Rossener</a></p>
 </footer>
 <script src="{{ "/assets/js/main.js" | prepend: site.baseurl }}"></script>
 {% include stats.html %}
