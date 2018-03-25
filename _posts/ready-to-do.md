@@ -23,6 +23,7 @@ tags:
 - Fiddler插件编写
 - Fiddler拦截请求和自动回复
 - Fiddler发送请求
+- Http之验签（PostMan和Fiddler在对参数值处理的差异：PostMan会对参数值进行urlEncode）
 
 
 
