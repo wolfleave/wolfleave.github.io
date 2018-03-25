@@ -27,6 +27,8 @@ tags:
 - Http下载之断点续传
 - .Net中HttpWebRequst,webClient,HttpClient的差异及使用场景
 - Http之身份标识
+- Windows中网络相关的命令（netstat -ano）
+- Jekyll搭建遇到的问题
 
 
 -----
