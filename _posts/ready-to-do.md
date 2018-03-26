@@ -29,6 +29,6 @@ tags:
 - Http之身份标识
 - Windows中网络相关的命令（netstat -ano）
 - Jekyll搭建遇到的问题
-
+- Action传入一个异步方法，调用Invoke时，如何执行
 
 -----

@@ -5,6 +5,7 @@ description: Some text about your blog.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://wolfleave.github.io" # the base hostname & protocol for your site
 google_analytics: "UA-XXXXXXXX-X"
+port: 4001
 
 # User Settings
 username: 离开
