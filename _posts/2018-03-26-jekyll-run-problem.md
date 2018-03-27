@@ -20,14 +20,15 @@ tags:
 
 再次运行jekyll serve,出现错误 
 
-    jekyll 3.7.3 | Error:  Permission denied - bind(2) for 127.0.0.1:4000
-1. 找到占用进程，kill它，运行。
-![端口](../assets/img/port.png)
+> jekyll 3.7.3 | Error:  Permission denied - bind(2) for 127.0.0.1:4000
+
+1. 找到占用进程，kill它，运行。  
+![端口](../assets/img/port.png)  
 ![进程](../assets/img/process.png)
 
 2. 修改Jekyll的默认端口
 
-     在_config.yml中添加配置port: 4001。把jekyll的默认端口号改为4001
+   在_config.yml中添加配置port: 4001。把jekyll的默认端口号改为4001
 
 
 
