@@ -3,7 +3,7 @@ layout: post
 title: "Jekyll 博客本地能够编译运行遇到的问题"
 description: 
 image: 
-category: '胡思乱想'
+category: 'Blog'
 tags:
 -  杂文
 ---
