@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Jekyll 博客本地能够编译运行遇到的问题"
+title: "Jekyll 博客本地编译运行遇到的问题"
 description: 
 image: 
 category: '胡思乱想'
