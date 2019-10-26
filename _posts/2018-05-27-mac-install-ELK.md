@@ -6,7 +6,7 @@ image:
 category: 'blog'
 tags:
 - 工具
-- 数据监控
+- 数据监控
 ---
 
 
