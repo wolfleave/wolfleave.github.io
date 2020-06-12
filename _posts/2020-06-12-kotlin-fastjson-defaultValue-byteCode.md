@@ -78,7 +78,8 @@ Affect(class count: 1 , method count: 1) cost in 577 ms, listenerId: 8
 
 - 查看class文件
     - javap -verbose class文件
-    - 通过class 文件 查看 QuestionDetailInfo 与 SeewoWxUserBindTopicDTO 类的 构造函数
+    - 通过class 文件 查看 QuestionDetailInfo 与 SeewoWxUserBindTopicDTO 类的 构造函数  
+
     ```
     public com.seewo.classroom.core.dto.weixin.SeewoWxUserBindTopicDTO();
     descriptor: ()V
@@ -94,9 +95,10 @@ Affect(class count: 1 , method count: 1) cost in 577 ms, listenerId: 8
          7: invokespecial #48                 // Method "<init>":(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
         10: return
 
-    ```
+    ``` 
+    
 
-    ```
+    ```   
     public com.seewo.classroom.core.entity.course.QuestionDetailInfo();
     descriptor: ()V
     flags: ACC_PUBLIC
@@ -108,7 +110,7 @@ Affect(class count: 1 , method count: 1) cost in 577 ms, listenerId: 8
       LocalVariableTable:
         Start  Length  Slot  Name   Signature
             0       5     0  this   Lkotlin/Unit;
-    ```
+    ```  
 
     **发现这两个类的 默认构造函数实现不一样** 这最终导致了反序列化时，对默认值的处理不同
     
