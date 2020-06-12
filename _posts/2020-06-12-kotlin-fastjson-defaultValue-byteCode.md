@@ -56,7 +56,8 @@ FastjsonASMDeserializer_x_xxx.class 为fastjson生成的字节码
 
 - 查看class文件
     - javap -verbose class文件
-    - 通过class 文件 查看 QuestionDetailInfo 与 SeewoWxUserBindTopicDTO 类的 构造函数   
+    - 通过class 文件 查看 QuestionDetailInfo 与 SeewoWxUserBindTopicDTO 类的 构造函数
+
     ```
     public com.seewo.classroom.core.dto.weixin.SeewoWxUserBindTopicDTO();
     descriptor: ()V
@@ -72,7 +73,7 @@ FastjsonASMDeserializer_x_xxx.class 为fastjson生成的字节码
          7: invokespecial #48                 // Method "<init>":(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
         10: return
 
-    ``` 
+    ```
     
     与
 
@@ -88,7 +89,8 @@ FastjsonASMDeserializer_x_xxx.class 为fastjson生成的字节码
       LocalVariableTable:
         Start  Length  Slot  Name   Signature
             0       5     0  this   Lkotlin/Unit;
-    ```   
+    ```
+       
     **发现这两个类的 默认构造函数实现不一样** 这最终导致了反序列化时，对默认值的处理不同
     
 
