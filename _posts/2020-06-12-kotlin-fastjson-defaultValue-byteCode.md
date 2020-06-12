@@ -28,7 +28,7 @@ FastjsonASMDeserializer_x_xxx.class 为fastjson生成的字节码
     - 反编译 FastjsonASMDeserializer_x_xxx.class，查看不同kotlin类对应的 FastjsonASMDeserializer_x_xxx.class 的反序列化逻辑 
     查看deserialze 方法的逻辑，发现没有针对JavaBean的特定逻辑差异 （此路不通）
 - arthas
-    - sc,sm,watch,trace,stack,tt  等命令查找class文件，根据方法执行路径  
+    - sc,sm,watch,trace,stack,tt  等命令查找class文件，跟踪方法执行路径  
         - ![](../assets/img/trace-fastjson.png)
     - 对比不同kotlin类的构造函数的区别
     ```
@@ -90,7 +90,7 @@ FastjsonASMDeserializer_x_xxx.class 为fastjson生成的字节码
         Start  Length  Slot  Name   Signature
             0       5     0  this   Lkotlin/Unit;
     ```
-       
+
     **发现这两个类的 默认构造函数实现不一样** 这最终导致了反序列化时，对默认值的处理不同
     
 
