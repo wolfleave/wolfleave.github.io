@@ -101,7 +101,7 @@ FastjsonASMDeserializer_x_xxx.class 为fastjson生成的字节码
         var totalStudentNumber:Int=0,
         var answerStudentNumber:Int=0,
         var slideHash:String?=null) 
-```    
+```
     与
 ```
     data class SeewoWxUserBindTopicDTO(
@@ -132,7 +132,7 @@ FastjsonASMDeserializer_x_xxx.class 为fastjson生成的字节码
 
 ```
     与
-```   
+```
     public com.seewo.classroom.core.entity.course.QuestionDetailInfo();
     descriptor: ()V
     flags: ACC_PUBLIC
@@ -146,7 +146,7 @@ FastjsonASMDeserializer_x_xxx.class 为fastjson生成的字节码
             0       5     0  this   Lkotlin/Unit;
 ```
 
-    **发现这两个类的 默认构造函数实现不一样** 这最终导致了反序列化时，对默认值的处理不同
+ **发现这两个类的 默认构造函数实现不一样** 这最终导致了反序列化时，对默认值的处理不同
     
 
 
