@@ -80,12 +80,15 @@ FastjsonASMDeserializer_x_xxx.class 为fastjson生成的字节码
 - 调试源码？
     - 动态生成的类，IDEA没有符号。不可调  
     - 反编译 FastjsonASMDeserializer_x_xxx.class，查看不同kotlin类对应的 FastjsonASMDeserializer_x_xxx.class 的反序列化逻辑 
-    查看deserialze 方法的逻辑，发现没有针对JavaBean的特定逻辑差异 （此路不通）
+    查看deserialze 方法的逻辑，发现没有针对JavaBean的特定逻辑差异 （此路不通）.反序列化逻辑为读取多特定的key值，之后将值设置到对象的字段中。反编译的代码如下：
+    ![](../assets/img/fastjson-deserializer.png)
+    ![](../assets/img/fastjson-deserializer2.png)
+
 - arthas
     - sc,sm,watch,trace,stack,tt  等命令查找class文件，跟踪方法执行路径  
         - ![](../assets/img/trace-fastjson.png)
     - 对比不同kotlin类的构造函数的区别
-    ```
+```
     data class QuestionDetailInfo(
         var answerBoardUid:String,//答题板id
         var type:AnswerBoardType=AnswerBoardType.OBJECTIVE, //答题板类型
@@ -98,21 +101,21 @@ FastjsonASMDeserializer_x_xxx.class 为fastjson生成的字节码
         var totalStudentNumber:Int=0,
         var answerStudentNumber:Int=0,
         var slideHash:String?=null) 
-    ```    
+```    
     与
-    ```
+```
     data class SeewoWxUserBindTopicDTO(
         var userId: String = "",
         var openId: String = "",
         var extendParam: String = "")
-    ```
+```
 
 
 - 查看class文件
     - javap -verbose class文件
     - 通过class 文件 查看 QuestionDetailInfo 与 SeewoWxUserBindTopicDTO 类的 构造函数
 
-    ```
+```
     public com.seewo.classroom.core.dto.weixin.SeewoWxUserBindTopicDTO();
     descriptor: ()V
     flags: ACC_PUBLIC
@@ -127,11 +130,9 @@ FastjsonASMDeserializer_x_xxx.class 为fastjson生成的字节码
          7: invokespecial #48                 // Method "<init>":(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
         10: return
 
-    ```
-    
+```
     与
-
-    ```   
+```   
     public com.seewo.classroom.core.entity.course.QuestionDetailInfo();
     descriptor: ()V
     flags: ACC_PUBLIC
@@ -143,7 +144,7 @@ FastjsonASMDeserializer_x_xxx.class 为fastjson生成的字节码
       LocalVariableTable:
         Start  Length  Slot  Name   Signature
             0       5     0  this   Lkotlin/Unit;
-    ```
+```
 
     **发现这两个类的 默认构造函数实现不一样** 这最终导致了反序列化时，对默认值的处理不同
     
