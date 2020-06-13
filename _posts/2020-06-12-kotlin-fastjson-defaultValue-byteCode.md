@@ -10,6 +10,60 @@ tags:
 - byteCode
 ---
 
+#### 问题描述
+使用fastjson对json字符串反序列化时,数据类中设置的默认值不生效。例如json字符串：
+```
+{
+        "answerBoardUid": "104ba939791d4a05952f49d2cf5e382e",
+        "answerStudentNumber": 5,
+        "correct": 0,
+        "correctNumber": 1,
+        "correctOptions": [
+            "A"
+        ],
+        "correctRate": 20,
+        "questionNumber": 1,
+        "slideHash": "8c24470d4148e42fd850caf589da1696",
+        "totalStudentNumber": 6
+    }
+```
+数据类如下：
+```
+    data class QuestionDetailInfo(
+        var answerBoardUid:String,//答题板id
+        var type:AnswerBoardType=AnswerBoardType.OBJECTIVE, //答题板类型
+        var correctOptions:List<String> = emptyList(),//正确选项
+        var options:List<String>?=null,//所选选项
+        var correct:Int=0,//是否回答正确 0:没答  1:正确  2:错误
+        var questionNumber:Int=0,//题号
+        var correctRate:Int=0,
+        var correctNumber:Int=0,
+        var totalStudentNumber:Int=0,
+        var answerStudentNumber:Int=0,
+        var slideHash:String?=null) 
+``` 
+
+反序列化后对象，type字段值为null。
+
+如果数据类改为如下：
+```
+    data class QuestionDetailInfo(
+        var answerBoardUid:String="",//答题板id
+        var type:AnswerBoardType=AnswerBoardType.OBJECTIVE, //答题板类型
+        var correctOptions:List<String> = emptyList(),//正确选项
+        var options:List<String>?=null,//所选选项
+        var correct:Int=0,//是否回答正确 0:没答  1:正确  2:错误
+        var questionNumber:Int=0,//题号
+        var correctRate:Int=0,
+        var correctNumber:Int=0,
+        var totalStudentNumber:Int=0,
+        var answerStudentNumber:Int=0,
+        var slideHash:String?=null) 
+``` 
+则type值为AnswerBoardType.OBJECTIVE
+
+### 本文将探索这种差异的原因
+
 #### fastjson 如何进行反序列化
 - 为每一个反序列化类，动态生成一个反序列化器
     - ASM
