@@ -87,7 +87,7 @@ FastjsonASMDeserializer_x_xxx.class 为fastjson生成的字节码
 - arthas
     - sc,sm,watch,trace,stack,tt  等命令查找class文件，跟踪方法执行路径  
         - ![](../assets/img/trace-fastjson.png)
-    - 对比不同kotlin类的构造函数的区别
+    - 对比不同kotlin类的构造函数的区别   
 ```
     data class QuestionDetailInfo(
         var answerBoardUid:String,//答题板id
@@ -101,9 +101,7 @@ FastjsonASMDeserializer_x_xxx.class 为fastjson生成的字节码
         var totalStudentNumber:Int=0,
         var answerStudentNumber:Int=0,
         var slideHash:String?=null) 
-```
-    与
-```
+
     data class SeewoWxUserBindTopicDTO(
         var userId: String = "",
         var openId: String = "",
@@ -130,9 +128,7 @@ FastjsonASMDeserializer_x_xxx.class 为fastjson生成的字节码
          7: invokespecial #48                 // Method "<init>":(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
         10: return
 
-```
-    与
-```
+
     public com.seewo.classroom.core.entity.course.QuestionDetailInfo();
     descriptor: ()V
     flags: ACC_PUBLIC
@@ -144,7 +140,7 @@ FastjsonASMDeserializer_x_xxx.class 为fastjson生成的字节码
       LocalVariableTable:
         Start  Length  Slot  Name   Signature
             0       5     0  this   Lkotlin/Unit;
-```
+```  
 
  **发现这两个类的 默认构造函数实现不一样** 这最终导致了反序列化时，对默认值的处理不同
     
