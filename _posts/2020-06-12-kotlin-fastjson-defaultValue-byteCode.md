@@ -88,6 +88,7 @@ FastjsonASMDeserializer_x_xxx.class 为fastjson生成的字节码
     - sc,sm,watch,trace,stack,tt  等命令查找class文件，跟踪方法执行路径  
         - ![](../assets/img/trace-fastjson.png)
     - 对比不同kotlin类的构造函数的区别   
+
 ```
     data class QuestionDetailInfo(
         var answerBoardUid:String,//答题板id
